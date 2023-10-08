@@ -31,3 +31,9 @@ yarn add axios element-ui normalize.css js-cookie nprogress path-to-regexp
 yarn add chalk eslint eslint-plugin-vue svg-sprite-loader -D
 ```
 
+### 搭建流程
+- 集成 自动开启浏览器 + 路径别名
+- 配置 eslint + prettier
+- 集成 Sass 预处理器
+- 集成 ElementUIPlus + Icon 自动注入
+- 

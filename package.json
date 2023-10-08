@@ -11,9 +11,11 @@
     "lint": "eslint --quiet --fix"
   },
   "dependencies": {
+    "element-plus": "^2.3.14",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -24,6 +26,10 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
+    "sass": "^1.69.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.17.0",
+    "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5"
   },
   "lint-staged": {
