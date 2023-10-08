@@ -1,8 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>Hello</div>
-  <HelloWorld msg="Hi" />
+  <HelloWorld />
 </template>
 
 <style scoped></style>

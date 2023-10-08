@@ -24,9 +24,6 @@ yarn cache clean && yarn
 
 ### 安装依赖
 ```bash
-安装 eslint prettier:
-yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged -D 
-
 yarn add axios element-ui normalize.css js-cookie nprogress path-to-regexp
 yarn add chalk eslint eslint-plugin-vue svg-sprite-loader -D
 ```
