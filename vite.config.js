@@ -25,7 +25,7 @@ export default defineConfig({
           prefix: 'Icon',
         }),
       ],
-      dts: resolve(__dirname, 'src/auto-imports.d.ts'),
+      dts: resolve(__dirname, 'src/build/auto-imports.d.ts'),
     }),
     Components({
       resolvers: [
@@ -37,7 +37,7 @@ export default defineConfig({
         }),
       ],
 
-      dts: resolve(__dirname, 'src/components.d.ts'),
+      dts: resolve(__dirname, 'src/build/components.d.ts'),
     }),
     Icons({
       autoInstall: true,
