@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
@@ -7,7 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-/* eslint-enable */
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default defineConfig({
   plugins: [
@@ -41,6 +40,10 @@ export default defineConfig({
     }),
     Icons({
       autoInstall: true,
+    }),
+    createSvgIconsPlugin({
+      iconDirs: [resolve(process.cwd(), "src/assets/svg")],
+      symbolId: "icon-[dir]-[name]",
     }),
   ],
   resolve: {
