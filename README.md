@@ -18,7 +18,7 @@ yarn && yarn dev
 
 ### yarn timeout 报错
 ```bash
-清除缓存：
+清除缓存
 yarn cache clean && yarn
 ```
 
