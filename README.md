@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+# Vue Admin Dashboard - 通用管理系统
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 项目地址
+https://github.com/wuchi57/vue-admin-dashboard.git
 
-## Recommended IDE Setup
+### 初始化项目
+```bash
+yarn create vite -> yarn
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### 使用技术栈
+vue3、axios、element-plus-ui、eslint、sass等
+
+### 运行方式
+```bash
+yarn && yarn dev
+```
+
+### 安装依赖
+```bash
+yarn add axios element-ui normalize.css js-cookie nprogress path-to-regexp
+yarn add chalk eslint eslint-plugin-vue svg-sprite-loader -D
+```
+
