@@ -4,5 +4,6 @@ import 'normalize.css/normalize.css'
 import 'element-plus/dist/index.css'
 import 'styles/index.sass'
 import 'virtual:svg-icons-register'
+import router from './router'
 
-createApp(App).mount('#app')
+createApp(App).use(router).mount('#app')
