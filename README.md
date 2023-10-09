@@ -34,3 +34,7 @@ yarn add chalk eslint eslint-plugin-vue svg-sprite-loader -D
 - 集成 Sass 预处理器
 - 集成 ElementUIPlus + Icon 自动注入
 - 配置 SvgIcon
+- 集成 CSS 重置方案
+- 自动导入vue、vue-router相关api
+- 
+
