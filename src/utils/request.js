@@ -1,18 +1,17 @@
 import axios from 'axios'
 import { getToken } from 'utils/auth.js'
-import { Message, MessageBox } from 'element-plus'
 
 const instance = axios.create({
-  baseURL: '/mock',
+  // baseURL: import.meta.env.BASE_URL,
   timeout: 5000
 })
 
 instance.interceptors.request.use(config => {
-
+  return config
 })
 
-instance.interceptors.response.use(config => {
-
-})
+// instance.interceptors.response.use(config => {
+//
+// })
 
 export default instance

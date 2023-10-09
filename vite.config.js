@@ -70,9 +70,19 @@ export default defineConfig({
     cors: true,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: 'http://127.0.0.1:3000',
         changeOrigin: true,
         rewrite: (p) => p.replace(/^\/api/, ''), // stage
+      },
+      '/dev-api': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/dev-api/, ''), // stage
+      },
+      '/prod-api': {
+        target: 'http://127.0.0.1:3000',
+        changeOrigin: true,
+        rewrite: (p) => p.replace(/^\/prod-api/, ''), // stage
       },
     },
   },

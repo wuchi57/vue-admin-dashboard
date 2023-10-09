@@ -12,4 +12,6 @@ store.use(
 
 export default store
 
-export { useCounterStore } from './counter.js'
+export { useAppStore } from './app.js'
+export { useSettingStore } from './setting.js'
+export { useUserStore } from './user.js'
