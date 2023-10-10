@@ -10,8 +10,8 @@ instance.interceptors.request.use(config => {
   return config
 })
 
-// instance.interceptors.response.use(config => {
-//
-// })
+instance.interceptors.response.use(response => {
+  return response.data
+})
 
 export default instance
