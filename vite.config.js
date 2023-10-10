@@ -49,16 +49,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      components: resolve(__dirname, 'src/components'),
-      api: resolve(__dirname, 'src/api'),
-      router: resolve(__dirname, 'src/router'),
-      store: resolve(__dirname, 'src/store'),
-      styles: resolve(__dirname, 'src/styles'),
       views: resolve(__dirname, 'src/views'),
-      layouts: resolve(__dirname, 'src/layouts'),
-      utils: resolve(__dirname, 'src/utils'),
-      plugins: resolve(__dirname, 'src/plugins'),
-      dirs: resolve(__dirname, 'src/directives'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },

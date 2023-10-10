@@ -14,9 +14,9 @@ export const useUserStore = defineStore('user', {
     login(userInfo) {
       return new Promise((resolve, reject) => {
         const { username, password } = userInfo
-        // User.login({ username: username.trim(), password}).then(res => {
-        //   console.log(res);
-        // })
+        User.login({ username: username.trim(), password}).then(res => {
+          console.log(res);
+        })
       })
     },
     getInfo() {},
