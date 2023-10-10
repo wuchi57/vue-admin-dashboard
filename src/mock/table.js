@@ -1,5 +1,4 @@
 import Mock from 'mockjs'
-import axios from 'axios'
 
 const data = Mock.mock({
   'items|30': [{
@@ -12,7 +11,7 @@ const data = Mock.mock({
   }]
 })
 
-Mock.mock('/mock/table', 'get', config => {
+Mock.mock('/mock/table/list', 'get', config => {
   const items = data.items
   return {
     code: 20000,
@@ -21,8 +20,4 @@ Mock.mock('/mock/table', 'get', config => {
       items: items
     }
   }
-})
-
-axios.get('/mock/table').then(res => {
-  console.log(res.data)
 })

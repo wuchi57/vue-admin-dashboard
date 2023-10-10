@@ -3,7 +3,7 @@ import request from '@/utils/request.js'
 export default class User {
   static async login (data) {
     return request({
-      url: 'vue-admin/user/login',
+      url: '/user/login',
       method: 'post',
       data
     })
@@ -11,7 +11,7 @@ export default class User {
 
   static async getInfo (token) {
     return request({
-      url: 'vue-admin/user/info',
+      url: '/user/info',
       method: 'get',
       params: { token }
     })
@@ -19,7 +19,7 @@ export default class User {
 
   static async logout () {
     return request({
-      url: 'vue-admin/user/logout',
+      url: '/user/logout',
       method: 'post',
     })
   }

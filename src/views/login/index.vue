@@ -1,15 +1,16 @@
 <template>
-<div>Login</div>
+  <h1>Login</h1>
+  <el-button @click="handleLogin">点击登录</el-button>
 </template>
 
 <script setup>
-import Table from '@/api/table.js'
-import { useUserStore } from 'store'
+import { User } from '@/api'
 
-Table.getList({})
-const userStore = useUserStore()
-
-userStore.login({ username: 'oo', password: 'abc'})
+function handleLogin () {
+  User.login({ username: 'admin', password: 'empty' }).then(res => {
+    console.log('登录成功');
+    console.log(res.data);
+  })
+}
 
 </script>
-

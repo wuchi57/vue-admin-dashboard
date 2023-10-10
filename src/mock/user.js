@@ -1,39 +1,69 @@
 import Mock from 'mockjs'
-import axios from 'axios'
 
-const data = Mock.mock({
-  'list|1-10': [
-    {
-      'id': Mock.Random.guid(),
-      'name': '@cname'
+const tokens = {
+  admin: {
+    token: 'admin-token'
+  },
+  editor: {
+    token: 'editor-token'
+  }
+}
+
+const users = {
+  'admin-token': {
+    roles: ['admin'],
+    introduction: 'I am a super administrator',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    name: 'Super Admin'
+  },
+  'editor-token': {
+    roles: ['editor'],
+    introduction: 'I am an editor',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    name: 'Normal Editor'
+  }
+}
+
+// 登录获取用户 token
+Mock.mock('/mock/user/login', 'post', params => {
+  const { username, password } = JSON.parse(params.body)
+  const token = tokens[username]
+
+  if (!token) {
+    return  {
+      code: 60204,
+      message: 'Account and password are incorrect.'
     }
-  ]
-})
+  }
 
-// 获取用户列表
-Mock.mock('/mock/user', 'get', params => {
   return {
-    code: 200,
-    message: 'success',
-    data: data.list
+    code: 20000,
+    data: token
   }
 })
 
-// 添加用户
-Mock.mock('/mock/user', 'post', params => {
-  let newData = JSON.parse(params.body)
-  data.list.push(newData)
+// 退出登录
+Mock.mock('/mock/user/logout', 'post', params => {
   return {
-    code: 200,
-    message: 'success',
-    data: data.list
+    code: 20000,
+    data: 'success'
   }
 })
 
-axios.get('/mock/user').then(res => {
-  console.log(res.data)
-})
+// 获取用户信息
+Mock.mock('/mock/user/info\.*', 'get', params => {
+  const { token } = params.query
+  const info = users[token]
 
-axios.post('/mock/user', {id: 11, name: 'sendi'}).then(res => {
-  console.log(res.data)
+  if (!info) {
+    return {
+      code: 50008,
+      message: 'Login failed, unable to get user details.'
+    }
+  }
+
+  return {
+    code: 20000,
+    data: info
+  }
 })
