@@ -4,13 +4,13 @@
 </template>
 
 <script setup>
-import { User } from '@/api'
+import { useUserStore } from '@/store/index.js'
+import router from '@/router/index.js'
 
-function handleLogin () {
-  User.login({ username: 'admin', password: 'empty' }).then(res => {
-    console.log('登录成功');
-    console.log(res.data);
+function handleLogin() {
+  const userStore = useUserStore()
+  userStore.login({ username: 'admin', password: 'empty' }).then(() => {
+    router.push({path: '/'})
   })
 }
-
 </script>

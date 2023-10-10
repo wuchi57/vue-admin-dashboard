@@ -42,8 +42,8 @@ export default defineConfig({
       autoInstall: true,
     }),
     createSvgIconsPlugin({
-      iconDirs: [resolve(process.cwd(), "src/assets/svg")],
-      symbolId: "icon-[dir]-[name]",
+      iconDirs: [resolve(process.cwd(), 'src/assets/svg')],
+      symbolId: 'icon-[dir]-[name]',
     }),
   ],
   resolve: {

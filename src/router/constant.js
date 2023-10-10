@@ -14,4 +14,9 @@ export default [
     name: 'login',
     component: () => import('views/login'),
   },
+  // {
+  //   path: '*',
+  //   name: '404',
+  //   component: () => import('views/404'),
+  // },
 ]
