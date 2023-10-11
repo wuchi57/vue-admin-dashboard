@@ -1,4 +1,5 @@
 import Mock from 'mockjs'
+import { param2Obj } from "@/utils/tools.js";
 
 const tokens = {
   admin: {
@@ -51,8 +52,8 @@ Mock.mock('/mock/user/logout', 'post', params => {
 })
 
 // 获取用户信息
-Mock.mock('/mock/user/info\.*', 'get', params => {
-  const { token } = params.query
+Mock.mock(/\/mock\/user\/info\.*/, 'get', params => {
+  const { token } = param2Obj(params.url)
   const info = users[token]
 
   if (!info) {
