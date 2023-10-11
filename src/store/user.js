@@ -14,34 +14,40 @@ export const useUserStore = defineStore('user', {
     login(userInfo) {
       return new Promise((resolve, reject) => {
         const { username, password } = userInfo
-        User.login({ username: username.trim(), password}).then(res => {
-          console.log(res);
-          const { data } = res
-          // cookie store 同时设置token
-          this.token = data.token
-          setToken(data.token)
-          console.log('登录成功： ', data.token);
-          resolve()
-        }).catch(err => {
-          console.error('err on store login');
-          reject(err)
-        })
+        User.login({ username: username.trim(), password })
+          .then((res) => {
+            console.log(res)
+            const { data } = res
+            // cookie store 同时设置token
+            this.token = data.token
+            setToken(data.token)
+            console.log('登录成功： ', data.token)
+            resolve()
+          })
+          .catch((err) => {
+            console.error('err on store login')
+            reject(err)
+          })
       })
     },
     getInfo() {},
     logout() {
-     return new Promise(resolve => {
-        this.token = ''
-        removeToken()
+      return new Promise((resolve) => {
+        this.clear()
         resolve()
       })
     },
     resetToken() {
-      return new Promise(resolve => {
-        this.token = ''
-        removeToken()
+      return new Promise((resolve) => {
+        this.clear()
         resolve()
       })
     },
+    clear() {
+      this.token = ''
+      this.name = ''
+      this.avatar = ''
+      removeToken()
+    }
   },
 })
