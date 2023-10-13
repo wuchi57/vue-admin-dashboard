@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { isExternal } from 'utils/validate.js'
+import { isExternal } from '@/utils/validate.js'
 
 const props = defineProps({
   prefix: {
