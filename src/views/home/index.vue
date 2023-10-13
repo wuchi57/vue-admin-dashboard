@@ -9,7 +9,6 @@ const username = ref()
 
 function handleGetInfo() {
   User.getInfo('admin-token').then((res) => {
-    console.log(res)
     username.value = res.data.name
   })
 }
