@@ -1,5 +1,6 @@
 <template>
   <div class="sidebar">
+    <Logo />
     <ul>
       <li>
         <router-link to="/">To Home</router-link>
@@ -12,7 +13,7 @@
 </template>
 
 <script setup>
-
+import Logo from './components/logo'
 </script>
 
 <style scoped lang="sass">
