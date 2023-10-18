@@ -1,19 +1,24 @@
 <template>
   <div class="sidebar">
     <Logo />
-    <ul>
-      <li>
-        <router-link to="/">To Home</router-link>
-      </li>
-      <li>
-        <router-link to="/about">To About</router-link>
-      </li>
-    </ul>
+    <el-scrollbar>
+      <Menu />
+    </el-scrollbar>
+
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <router-link to="/">To Home</router-link>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <router-link to="/about">To About</router-link>-->
+<!--      </li>-->
+<!--    </ul>-->
   </div>
 </template>
 
 <script setup>
 import Logo from './components/logo'
+import Menu from './components/menu'
 </script>
 
 <style scoped lang="sass">

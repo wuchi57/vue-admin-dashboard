@@ -3,7 +3,7 @@
     <Sidebar></Sidebar>
     <div class="main-container">
       <Navbar></Navbar>
-      <AppMain></AppMain>
+      <Main></Main>
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script setup>
 import Sidebar from './components/sidebar'
 import Navbar from './components/navbar'
-import AppMain from './components/app-main'
+import Main from './components/main'
 </script>
 
 <style scoped lang="sass">

@@ -31,6 +31,36 @@ export default [
     ],
   },
   {
+    path: '/example',
+    component: Layout,
+    children: [
+      {
+        path: 'table',
+        name: 'table',
+        component: () => import('@/views/table'),
+        meta: {title: 'Table'}
+      },
+      {
+        path: 'tree',
+        name: 'tree',
+        component: () => import('@/views/tree'),
+        meta: {title: 'Tree'}
+      }
+    ]
+  },
+  {
+    path: '/form',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'form',
+        component: () => import('@/views/form'),
+        meta: {title: 'Form'}
+      }
+    ]
+  },
+  {
     path: '/external-link',
     name: 'external-link',
     component: Layout,

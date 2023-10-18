@@ -1,5 +1,5 @@
 <template>
-  <div class="app-main">
+  <div class="main">
     <router-view></router-view>
   </div>
 </template>
@@ -9,7 +9,6 @@
 </script>
 
 <style scoped lang="sass">
-.app-main
-  border: 1px solid red
+.main
   padding: 20px
 </style>
