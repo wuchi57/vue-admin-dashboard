@@ -61,6 +61,62 @@ export default [
     ]
   },
   {
+    path: '/nested',
+    component: Layout,
+    name: 'nested',
+    meta: {
+      title: 'Nested'
+    },
+    children: [
+      {
+        path: 'menu1',
+        name: 'menu1',
+        component: () => import('@/views/nested/menu1/index.vue'),
+        meta: { title: 'Menu1' },
+        children: [
+          {
+            path: 'menu1-1',
+            name: 'menu1-1',
+            component: () => import('@/views/nested/menu1/menu1-1/index.vue'),
+            meta: { title: 'Menu1-1'}
+          },
+          {
+            path: 'menu1-2',
+            name: 'menu1-2',
+            component: () => import('@/views/nested/menu1/menu1-2/index.vue'),
+            meta: { title: 'Menu1-2'},
+            children: [
+              {
+                path: 'menu1-2-1',
+                name: 'menu1-2-1',
+                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1/index.vue'),
+                meta: { title: 'Menu1-2-1'}
+              },
+              {
+                path: 'menu1-2-2',
+                name: 'menu1-2-2',
+                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2/index.vue'),
+                meta: { title: 'Menu1-2-2'}
+              },
+            ]
+          },
+          {
+            path: 'menu1-3',
+            name: 'menu1-3',
+            component: () => import('@/views/nested/menu1/menu1-3/index.vue'),
+            meta: { title: 'Menu1-3'}
+          },
+        ]
+      },
+      {
+        path: 'menu2',
+        name: 'menu2',
+        component: () => import('@/views/nested/menu2/index.vue'),
+        meta: { title: 'Menu2'}
+      }
+    ]
+  },
+  {
     path: '/external-link',
     name: 'external-link',
     component: Layout,
