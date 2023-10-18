@@ -15,17 +15,9 @@ export default [
       {
         path: 'dashboard',
         name: 'dashboard',
-        component: () => import('views/home'),
+        component: () => import('@/views/dashboard'),
         meta: {
           title: 'Dashboard',
-        },
-      },
-      {
-        path: '/about',
-        name: 'about',
-        component: () => import('views/about'),
-        meta: {
-          title: 'About',
         },
       },
     ],
