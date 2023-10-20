@@ -5,6 +5,7 @@ export default [
     path: '/login',
     name: 'login',
     component: () => import('views/login'),
+    meta: { hidden: true }
   },
   {
     path: '/',
@@ -16,14 +17,14 @@ export default [
         path: 'dashboard',
         name: 'dashboard',
         component: () => import('@/views/dashboard'),
-        meta: {
-          title: 'Dashboard',
-        },
+        meta: { title: 'Dashboard' },
       },
     ],
+    meta: { title: 'Home' }
   },
   {
     path: '/example',
+    name: 'example',
     component: Layout,
     children: [
       {
@@ -38,10 +39,12 @@ export default [
         component: () => import('@/views/tree'),
         meta: {title: 'Tree'}
       }
-    ]
+    ],
+    meta: { title: 'Example' }
   },
   {
     path: '/form',
+    name: 'form',
     component: Layout,
     children: [
       {
@@ -50,7 +53,8 @@ export default [
         component: () => import('@/views/form'),
         meta: {title: 'Form'}
       }
-    ]
+    ],
+    meta: {title: 'Form'}
   },
   {
     path: '/nested',
@@ -120,10 +124,12 @@ export default [
         },
       },
     ],
+    meta: {}
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: () => import('views/404'),
+    meta: { hidden: true }
   },
 ]
