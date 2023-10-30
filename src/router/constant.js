@@ -12,6 +12,7 @@ export default [
     name: 'home',
     component: Layout,
     redirect: '/dashboard',
+    meta: { title: 'Home' },
     children: [
       {
         path: 'dashboard',
@@ -20,12 +21,12 @@ export default [
         meta: { title: 'Dashboard' },
       },
     ],
-    meta: { title: 'Home' }
   },
   {
     path: '/example',
     name: 'example',
     component: Layout,
+    meta: { title: 'Example' },
     children: [
       {
         path: 'table',
@@ -40,12 +41,12 @@ export default [
         meta: {title: 'Tree'}
       }
     ],
-    meta: { title: 'Example' }
   },
   {
     path: '/form',
     name: 'form',
     component: Layout,
+    meta: {title: 'Form'},
     children: [
       {
         path: 'index',
@@ -54,15 +55,12 @@ export default [
         meta: {title: 'Form'}
       }
     ],
-    meta: {title: 'Form'}
   },
   {
     path: '/nested',
     component: Layout,
     name: 'nested',
-    meta: {
-      title: 'Nested'
-    },
+    meta: { title: 'Nested' },
     children: [
       {
         path: 'menu1',
@@ -116,15 +114,25 @@ export default [
     path: '/external-link',
     name: 'external-link',
     component: Layout,
+    meta: {},
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: {
-          title: 'External Link',
-        },
+        meta: { title: 'External Link', },
       },
     ],
-    meta: {}
+  },
+  {
+    path: '/external',
+    name: 'external',
+    component: Layout,
+    meta: {title: 'Children Hidden'},
+    children: [
+      {
+        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        meta: { title: 'External Link', hidden: true },
+      },
+    ],
   },
   {
     path: '/:pathMatch(.*)*',
