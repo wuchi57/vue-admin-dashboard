@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path-browserify'
+import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -50,6 +50,7 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
       views: resolve(__dirname, 'src/views'),
+      components: resolve(__dirname, 'src/components'),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue'],
   },

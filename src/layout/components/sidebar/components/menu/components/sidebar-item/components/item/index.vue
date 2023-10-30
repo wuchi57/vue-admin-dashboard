@@ -1,11 +1,16 @@
 <template>
   <div>
-    {{title}}
+    <SvgIcon v-if="icon" :name="icon" />
+    <span>
+      {{title}}
+    </span>
   </div>
 </template>
 
 <script setup>
-const props = defineProps({
+import SvgIcon from 'components/svg-icon'
+
+defineProps({
   icon: {
     type: String,
     default: ''
@@ -18,5 +23,6 @@ const props = defineProps({
 </script>
 
 <style scoped lang="sass">
-
+.svg-icon
+  margin-right: 10px
 </style>

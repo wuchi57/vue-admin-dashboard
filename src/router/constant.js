@@ -18,7 +18,7 @@ export default [
         path: 'dashboard',
         name: 'dashboard',
         component: () => import('@/views/dashboard'),
-        meta: { title: 'Dashboard' },
+        meta: { title: 'Dashboard', icon: 'dashboard' },
       },
     ],
   },
@@ -26,19 +26,19 @@ export default [
     path: '/example',
     name: 'example',
     component: Layout,
-    meta: { title: 'Example' },
+    meta: { title: 'Example', icon: 'form' },
     children: [
       {
         path: 'table',
         name: 'table',
         component: () => import('@/views/table'),
-        meta: {title: 'Table'}
+        meta: {title: 'Table', icon: 'table'}
       },
       {
         path: 'tree',
         name: 'tree',
         component: () => import('@/views/tree'),
-        meta: {title: 'Tree'}
+        meta: {title: 'Tree', icon: 'tree'}
       }
     ],
   },
@@ -52,7 +52,7 @@ export default [
         path: 'index',
         name: 'form',
         component: () => import('@/views/form'),
-        meta: {title: 'Form'}
+        meta: {title: 'Form', icon: 'form'}
       }
     ],
   },
@@ -60,7 +60,7 @@ export default [
     path: '/nested',
     component: Layout,
     name: 'nested',
-    meta: { title: 'Nested' },
+    meta: { title: 'Nested', icon: 'nested' },
     children: [
       {
         path: 'menu1',
@@ -118,7 +118,7 @@ export default [
     children: [
       {
         path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', },
+        meta: { title: 'External Link', icon: 'link' },
       },
     ],
   },
