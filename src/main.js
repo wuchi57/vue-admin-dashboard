@@ -8,5 +8,11 @@ import router from './router'
 import store from './store'
 import '@/router/permission.js'
 import '@/mock'
+import SvgIcon from 'components/svg-icon'
 
-createApp(App).use(router).use(store).mount('#app')
+const app = createApp(App)
+
+// 全局组件注册
+app.component('SvgIcon', SvgIcon)
+
+app.use(router).use(store).mount('#app')

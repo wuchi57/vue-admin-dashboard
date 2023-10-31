@@ -1,11 +1,11 @@
 <template>
   <div v-if="isShow">
     <Link v-if="!isMenu" :to="resolvePath(currentItem.path)">
-      <el-menu-item>
+      <el-menu-item :index="resolvePath(currentItem.path)">
         <Item :icon="currentItem?.meta?.icon" :title="currentItem?.meta?.title" />
       </el-menu-item>
     </Link>
-    <el-sub-menu v-else :index="item.path">
+    <el-sub-menu v-else :index="resolvePath(item.path)">
       <template #title>
         <Item :icon="item?.meta?.icon" :title="item?.meta?.title" />
       </template>
@@ -57,7 +57,7 @@ function isShowOne (parent) {
   const children = parent.children || []
   const showingChildren = children.filter(item => !(item.meta && item.meta.hidden))
 
-  // 如果一个都没有，就默认显示 父级
+  // 如果一个都没有，就默认显示 父级, path重置为空是因为resolvePath已默认包含basePath
   if (showingChildren.length === 0) {
     currentItem.value = { ...parent, path: ''}
     return true

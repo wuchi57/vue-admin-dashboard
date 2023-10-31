@@ -14,5 +14,5 @@ import Menu from './components/menu'
 
 <style scoped lang="sass">
 .sidebar
-  border: 1px solid red
+  border-right: 1px solid red
 </style>

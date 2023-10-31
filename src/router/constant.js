@@ -12,7 +12,6 @@ export default [
     name: 'home',
     component: Layout,
     redirect: '/dashboard',
-    meta: { title: 'Home' },
     children: [
       {
         path: 'dashboard',
@@ -46,7 +45,6 @@ export default [
     path: '/form',
     name: 'form',
     component: Layout,
-    meta: {title: 'Form'},
     children: [
       {
         path: 'index',
