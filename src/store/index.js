@@ -6,7 +6,7 @@ const store = createPinia()
 store.use(
   createPersistedState({
     auto: true,
-    key: id => `__vue_admin_${id}`,
+    key: id => `vue_admin_dashboard_${id}`,
   })
 )
 

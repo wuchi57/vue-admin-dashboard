@@ -3,7 +3,7 @@
     <el-menu
       default-active="2"
       class="el-menu-vertical-demo"
-      :collapse="isCollapse"
+      :collapse="!useAppStore().sidebar.opened"
       @open="handleOpen"
       @close="handleClose"
     >
@@ -13,7 +13,7 @@
         :item="route"
         :base-path="route.path"
       />
-<!--      <el-sub-menu index="1">
+<!--   <el-sub-menu index="1">
         <template #title>
           <el-icon><location /></el-icon>
           <span>Navigator One</span>
@@ -48,7 +48,7 @@
           <el-icon><setting /></el-icon>
           <span>Navigator Four</span>
         </template>
-      </el-menu-item>  -->
+      </el-menu-item> -->
     </el-menu>
   </el-scrollbar>
 </template>
@@ -56,9 +56,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import SidebarItem from './components/sidebar-item'
+import { useAppStore } from '@/store/index.js'
+// import { Location, Document, Setting} from '@element-plus/icons-vue'
 
 const router = useRouter()
-const isCollapse = ref(false)
 
 const handleOpen = (key, keyPath) => {
   console.log(key, keyPath)

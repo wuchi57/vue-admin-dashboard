@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   isActive: {
     type: Boolean,
     default: false

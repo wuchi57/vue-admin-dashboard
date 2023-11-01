@@ -2,11 +2,13 @@ import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
   state: () => ({
-    count: 1,
+    sidebar: {
+      opened: true,
+    }
   }),
   actions: {
-    increment() {
-      this.count++
+    toggleSidebar() {
+      this.sidebar.opened = !this.sidebar.opened
     },
   },
 })

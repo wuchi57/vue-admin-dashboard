@@ -1,20 +1,20 @@
 <template>
-  <div class="logo" @click="collapse = !collapse">
+  <div class="logo">
     <transition name="logo-transition">
-      <router-link v-if="collapse" key="collapse" class="link" to="/">
-        <img v-if="dt.image" :src="dt.image" class="img" alt="logo" />
-        <span v-else>{{ dt.title }}</span>
-      </router-link>
-      <router-link v-else key="expand" class="link" to="/">
+      <router-link v-if="useAppStore().sidebar.opened" key="expand" class="link" to="/">
         <img v-if="dt.image" :src="dt.image" class="img" alt="logo" />
         <span>{{ dt.title }}</span>
+      </router-link>
+      <router-link v-else key="collapse" class="link" to="/">
+        <img v-if="dt.image" :src="dt.image" class="img" alt="logo" />
+        <span v-else>{{ dt.title }}</span>
       </router-link>
     </transition>
   </div>
 </template>
 
 <script setup>
-const collapse = ref(false)
+import { useAppStore } from '@/store/index.js'
 
 const dt = ref({
   image: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png',

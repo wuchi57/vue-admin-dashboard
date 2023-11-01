@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <Hamburger />
+    <Hamburger :is-active="useAppStore().sidebar.opened" @toggle-click="useAppStore().toggleSidebar()" />
     <Breadcrumb />
     <LogoutButton />
   </div>
@@ -10,6 +10,7 @@
 import LogoutButton from './components/logout-button'
 import Hamburger from './components/hamburger'
 import Breadcrumb from './components/breadcrumb'
+import { useAppStore } from '@/store/index.js'
 
 </script>
 
