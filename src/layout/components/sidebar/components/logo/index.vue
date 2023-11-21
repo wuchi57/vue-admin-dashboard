@@ -29,7 +29,6 @@ const sidebarWidth = inject('sidebarWidth')
 
 <style scoped lang="sass">
 .logo
-  border-bottom: 1px solid red
   height: 50px
   width: v-bind(sidebarWidth)
   position: absolute
