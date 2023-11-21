@@ -1,11 +1,12 @@
 <template>
-  <el-scrollbar style="height: 100%;">
+  <el-scrollbar style="height: 100%; margin-top: 50px;">
     <el-menu
-      default-active="2"
+      :default-active="activeMenu"
       class="el-menu-vertical-demo"
       :collapse="!useAppStore().sidebar.opened"
       @open="handleOpen"
       @close="handleClose"
+      :collapse-transition="false"
     >
       <SidebarItem
         v-for="route in router.options.routes"
@@ -67,5 +68,16 @@ const handleOpen = (key, keyPath) => {
 const handleClose = (key, keyPath) => {
   console.log(key, keyPath)
 }
+
+const activeMenu = computed(() => {
+  const { path, meta } = useRoute()
+  console.log(path, useRoute())
+  return path
+})
 </script>
+
+<style scoped lang="sass">
+.el-menu
+  --el-menu-border-color: transparent
+</style>
 

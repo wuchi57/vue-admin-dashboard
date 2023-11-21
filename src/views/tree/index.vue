@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-right: 30px" />
+    <el-input v-model="filterText" placeholder="Filter keyword" />
     <el-tree
       ref="treeRef"
       :data="data"
