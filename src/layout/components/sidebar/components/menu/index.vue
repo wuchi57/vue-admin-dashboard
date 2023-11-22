@@ -4,8 +4,6 @@
       :default-active="activeMenu"
       class="el-menu-vertical-demo"
       :collapse="!useAppStore().sidebar.opened"
-      @open="handleOpen"
-      @close="handleClose"
       :collapse-transition="false"
     >
       <SidebarItem
@@ -62,16 +60,8 @@ import { useAppStore } from '@/store/index.js'
 
 const router = useRouter()
 
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath)
-}
-
 const activeMenu = computed(() => {
-  const { path, meta } = useRoute()
-  console.log(path, useRoute())
+  const { path } = useRoute()
   return path
 })
 </script>

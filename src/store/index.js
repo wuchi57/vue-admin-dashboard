@@ -15,3 +15,4 @@ export default store
 export { useAppStore } from './app.js'
 export { useSettingStore } from './setting.js'
 export { useUserStore } from './user.js'
+export { useTagsViewStore } from './tags-view.js'
