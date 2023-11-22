@@ -1,19 +1,12 @@
 <template>
   <div class="main">
-    <router-view v-slot="{ Component }">
+    <router-view v-slot="{ Component, route }">
       <transition name="fade-transform" mode="out-in">
-        <component :is="Component" :key="key" />
+        <component :is="Component" :key="route.path"/>
       </transition>
     </router-view>
   </div>
 </template>
-
-<script setup>
-const route = useRoute()
-const key = computed(() => {
-  return route.path
-})
-</script>
 
 <style scoped lang="sass">
 .main

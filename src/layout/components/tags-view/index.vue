@@ -2,13 +2,33 @@
   <div class="tags-view">
     <el-scrollbar>
       <div class="scrollbar-content">
-        <p v-for="item in 50" :key="item" class="scrollbar-item">
-          {{ item }}
+        <p
+          v-for="item in useTagsViewStore().visitedViews"
+          :key="item.path"
+          class="scrollbar-item"
+        >
+          {{ item.title }}
         </p>
       </div>
     </el-scrollbar>
   </div>
 </template>
+
+<script setup>
+import { useTagsViewStore } from '@/store/index.js'
+
+const route = useRoute()
+
+watchEffect(() => {
+  if (route.name) {
+    useTagsViewStore().addView(route)
+  }
+})
+
+onMounted(() => {
+  useTagsViewStore().addView(route)
+})
+</script>
 
 <style scoped lang="sass">
 .tags-view
