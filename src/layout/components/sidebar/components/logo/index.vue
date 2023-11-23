@@ -7,7 +7,7 @@
         <span class="title">{{ dt.title }}</span>
       </router-link>
 
-      <router-link v-else key="collapse" class="link" to="/">
+      <router-link v-else key="collapse" class="link collapse" to="/">
         <img v-if="dt.image" :src="dt.image" class="img" alt="logo" />
         <span v-else class="title">{{ dt.title }}</span>
       </router-link>
@@ -35,13 +35,17 @@ const sidebarWidth = inject('sidebarWidth')
   position: absolute
   z-index: 99
   transition: width .25s
+  overflow: hidden
 
 .link
+  width: 210px
   display: flex
   align-items: center
   justify-content: center
   gap: 12px
   height: 100%
+.link.collapse
+  width: 54px
 
 .img
   width: 32px

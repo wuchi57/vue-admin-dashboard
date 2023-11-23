@@ -1,5 +1,5 @@
 <template>
-  <span>{{ title }}</span>
+  <span class="menu-title">{{ title }}</span>
 </template>
 
 <script setup>
@@ -10,3 +10,8 @@ defineProps({
   },
 })
 </script>
+
+<style scoped lang="sass">
+.menu-title
+  margin-left: 10px
+</style>

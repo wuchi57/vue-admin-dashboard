@@ -18,5 +18,4 @@ defineProps({
 <style scoped lang="sass">
 .svg-icon
   font-size: 18px
-  margin-right: 10px
 </style>

@@ -37,6 +37,10 @@ $duration: .25s
   inset: 0 auto 0 0
   width: $sidebarWidth
   transition: width $duration
+  :deep(.el-menu)
+    width: 100% !important
+  :deep(.el-sub-menu__title)
+    padding-right: 0 !important
 
 .navbar
   height: 50px
