@@ -25,6 +25,8 @@ const dt = ref({
   title: 'Admin Template',
 })
 
+const sidebarWidthMin = inject('sidebarWidthMin')
+const sidebarWidthMax = inject('sidebarWidthMax')
 const sidebarWidth = inject('sidebarWidth')
 </script>
 
@@ -38,14 +40,14 @@ const sidebarWidth = inject('sidebarWidth')
   overflow: hidden
 
 .link
-  width: 210px
+  width: v-bind(sidebarWidthMax)
   display: flex
   align-items: center
   justify-content: center
   gap: 12px
   height: 100%
 .link.collapse
-  width: 54px
+  width: v-bind(sidebarWidthMin)
 
 .img
   width: 32px

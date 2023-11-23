@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper" :class="{ isExpanded: useAppStore().sidebar.opened }">
     <Sidebar />
-    <div class="main-container">
+    <div class="container">
       <Navbar />
       <TagsView />
       <Main />
@@ -16,9 +16,13 @@ import Main from './components/main'
 import TagsView from './components/tags-view'
 import { useAppStore } from '@/store/index.js'
 
+const sidebarWidthMin = '54px'
+const sidebarWidthMax = '210px'
 const sidebarWidth = computed(() => {
-  return useAppStore().sidebar.opened ? '210px' : '54px'
+  return useAppStore().sidebar.opened ? sidebarWidthMax : sidebarWidthMin
 })
+provide('sidebarWidthMin', sidebarWidthMin)
+provide('sidebarWidthMax', sidebarWidthMax)
 provide('sidebarWidth', sidebarWidth)
 
 </script>
@@ -27,7 +31,7 @@ provide('sidebarWidth', sidebarWidth)
 $sidebarWidth: v-bind(sidebarWidth)
 $duration: .25s
 
-.main-container
+.container
   width: calc(100% - $sidebarWidth)
   margin-left: $sidebarWidth
   transition: margin-left $duration
@@ -45,6 +49,6 @@ $duration: .25s
 .navbar
   height: 50px
 
-.app-main
+.main
   min-height: calc(100vh - 34px - 50px)
 </style>
