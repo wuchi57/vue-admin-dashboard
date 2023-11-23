@@ -18,10 +18,11 @@
 
 <script setup>
 import { useAppStore } from '@/store/index.js'
+import img from '/public/vite.svg'
 
 const dt = ref({
-  image: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png',
-  title: 'Vue Admin Template',
+  image: img,
+  title: 'Admin Template',
 })
 
 const sidebarWidth = inject('sidebarWidth')

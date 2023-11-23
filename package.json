@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.1.0",
+    "@iconify-json/bi": "^1.1.20",
+    "@iconify-json/ep": "^1.1.12",
     "@vitejs/plugin-vue": "^4.2.3",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",

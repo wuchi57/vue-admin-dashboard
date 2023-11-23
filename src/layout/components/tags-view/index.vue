@@ -2,13 +2,18 @@
   <div class="tags-view">
     <el-scrollbar>
       <div class="scrollbar-content">
-        <p
+        <router-link
           v-for="item in useTagsViewStore().visitedViews"
           :key="item.path"
+          :to="{path: item.path, fullPath: item.fullPath}"
           class="scrollbar-item"
         >
           {{ item.title }}
-        </p>
+          <IconEpClose
+            v-if="disableCloseIcon.indexOf(item.path) === -1"
+            @click.prevent.stop="handleClose(item)"
+          />
+        </router-link>
       </div>
     </el-scrollbar>
   </div>
@@ -17,16 +22,48 @@
 <script setup>
 import { useTagsViewStore } from '@/store/index.js'
 
+const { proxy } = getCurrentInstance()
 const route = useRoute()
+const router = useRouter()
+const tagsViewStore = useTagsViewStore()
+const disableCloseIcon = ['/dashboard']
 
-watchEffect(() => {
-  if (route.name) {
-    useTagsViewStore().addView(route)
+function isCurrent (item) {
+  return item.path === route.path
+}
+function handleClose(item) {
+  proxy.$tabs.closeTab(item)
+  if (isCurrent(item)) {
+    toLastView()
   }
+}
+
+function toLastView () {
+  let lastView = tagsViewStore.visitedViews.slice(-1)[0]
+  if (lastView) {
+    router.push(lastView.fullPath)
+  }
+}
+
+// 初始化 tags 比如默认展示首页
+function initTags () {
+  let home = {
+    path: '/dashboard',
+    fullPath: '/dashboard',
+    name: 'dashboard',
+    meta: {title: 'Dashboard'},
+  }
+  tagsViewStore.addView(home)
+}
+
+// 使用watch而不用watchEffect可避免自动监控useTagsViewStore
+watch(() => route.name, () => {
+  tagsViewStore.addView(route)
 })
 
 onMounted(() => {
-  useTagsViewStore().addView(route)
+  initTags()
+  tagsViewStore.addView(route)
 })
 </script>
 
@@ -45,7 +82,12 @@ onMounted(() => {
     display: flex
 
     .scrollbar-item
-      width: 100px
+      display: flex
+      align-items: center
+      gap: 10px
+      min-width: 80px
+      font-size: 14px
+      padding: 0 10px
       height: 26px
       line-height: 26px
       margin: 4px 10px
@@ -54,4 +96,9 @@ onMounted(() => {
       cursor: pointer
       border: 1px solid #d8dce5
       color: #495060
+
+    .scrollbar-item.router-link-active
+      border-color: transparent
+      color: white !important
+      background: #409eff
 </style>

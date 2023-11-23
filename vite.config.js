@@ -19,10 +19,6 @@ export default defineConfig({
       // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
       resolvers: [
         ElementPlusResolver(),
-        // Auto import icon components 自动导入图标组件
-        IconsResolver({
-          prefix: 'Icon',
-        }),
       ],
       dts: resolve(__dirname, 'src/build/auto-imports.d.ts'),
     }),
@@ -32,7 +28,8 @@ export default defineConfig({
         ElementPlusResolver(),
         // Auto register icon components 自动注册图标组件
         IconsResolver({
-          enabledCollections: ['ep'],
+          prefix: 'Icon',
+          enabledCollections: ['ep', 'bi'],
         }),
       ],
 
