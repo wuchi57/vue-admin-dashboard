@@ -41,14 +41,19 @@ $duration: .25s
   inset: 0 auto 0 0
   width: $sidebarWidth
   transition: width $duration
-  :deep(.el-menu)
-    width: 100% !important
-  :deep(.el-sub-menu__title)
-    padding-right: 0 !important
 
 .navbar
   height: 50px
 
 .main
   min-height: calc(100vh - 34px - 50px)
+</style>
+
+<style lang="sass">
+// el-menu缩小时的宽度默认为64px，调整一下
+.sidebar
+  .el-menu
+    width: 100% !important
+    .el-sub-menu__title
+      padding-right: 0 !important
 </style>
