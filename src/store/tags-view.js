@@ -44,4 +44,6 @@ export const useTagsViewStore = defineStore('tagsView', {
       index > -1 && this.cachedViews.splice(index, 1)
     }
   },
+  // 取消该 store 的持久存储
+  persist: false
 })

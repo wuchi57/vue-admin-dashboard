@@ -20,6 +20,12 @@ yarn && yarn dev
 ```bash
 清除缓存
 yarn cache clean && yarn
+
+或者配置命令行代理
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+
+取消命令行代理
+unset http_proxy && unset https_proxy && unset all_proxy
 ```
 
 ### 安装依赖
