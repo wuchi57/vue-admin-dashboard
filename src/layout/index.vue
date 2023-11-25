@@ -4,7 +4,9 @@
     <div class="container">
       <Navbar />
       <TagsView />
-      <Main />
+      <el-scrollbar>
+        <Main />
+      </el-scrollbar>
     </div>
   </div>
 </template>
@@ -28,6 +30,7 @@ provide('sidebarWidth', sidebarWidth)
 </script>
 
 <style scoped lang="sass">
+$contentHeight: calc(100vh - 34px - 50px)
 $sidebarWidth: v-bind(sidebarWidth)
 $duration: .25s
 
@@ -43,10 +46,20 @@ $duration: .25s
   transition: width $duration
 
 .navbar
+  position: sticky
+  top: 0
   height: 50px
 
+.tags-view
+  position: sticky
+  top: 50px
+  z-index: 9
+
+.el-scrollbar
+  height: $contentHeight
+
 .main
-  min-height: calc(100vh - 34px - 50px)
+  min-height: $contentHeight
 </style>
 
 <style lang="sass">
